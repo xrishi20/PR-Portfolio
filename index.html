@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Priti Rathod - Portfolio">
     <meta name="description" content="I am Priti Rathod, Invercargill- New Zealand based Web and App Developer specializing in bespoke, artisanal, single origin, grass fed, fixed gear, and slow roasted Website & Apps for clients of all sizes. Currently working for Market South.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./tailwind.css">
     <script src="./parallax.js" type="text/javascript"></script>
     <style>
         body {
             transform: translate3d(0,0,0);
+            font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
         @media screen and (min-width: 1024px) {
@@ -21,6 +23,55 @@
             a:hover {
                 cursor: none;
             }
+        }
+
+        #cta .linkBorder {
+            transform: translate(0.375rem, -0.375rem) translate3d(0,0,0);
+            transition: transform 300ms ease-out;
+        }
+
+        #cta:hover .linkBorder {
+            transform: translate(0.25rem, -0.25rem) translate3d(0,0,0);
+        }
+
+        .yellowDecoration span {
+            position: relative;
+            display: inline-block;
+        }
+
+        .yellowDecoration span::before {
+            content: '';
+            z-index: -1;
+            height: 30%;
+            width: 100%;
+            position: absolute;
+            bottom: 5%;
+            left: 0;
+            background-color: #FBFF12;
+        }
+
+        #landing *::selection {
+            background: #FBFF12;
+            color: #0C0F0A;
+        }
+
+        #works *::selection {
+            background: #FBFF12;
+            color: #0C0F0A;
+        }
+
+        #skills *::selection {
+            background: #41EAD4;
+            color: #0C0F0A;
+        }
+
+        #work-history *::selection {
+            background: #FF206E;
+            color: #0C0F0A;
+        }
+
+        .z--1 {
+            z-index: -1 !important;
         }
 
         .click {
@@ -53,8 +104,8 @@
     </style>
     <title>Priti Rathod - Portfolio</title>
 </head>
-<body class="relative">
-    <main class="relative overflow-hidden">
+<body class="relative antialiased">
+    <main class="relative overflow-hidden text-myBlack">
 
         <!-- Mouse -->
         <svg class="mouse absolute h-6 w-6 z-50 text-myYellow transform -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden lg:block" width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,15 +128,60 @@
         </svg>
 
         <!-- Landing -->
-        <div id="landing" class="relative w-full h-screen overflow-hidden">
+        <div id="landing" class="relative w-full h-full">
 
 
             <!-- Background -->
-            <ul id="scene" class="absolute top-0 left-0 w-full h-full object-cover overflow-hidden z-0 transform scale-110">
-                <li class="w-full h-full object-cover overflow-hidden layer" data-depth="0.15">
-                    <img class="w-full h-full object-cover" src="./images/Decoration.svg" alt="Decoration">
-                </li>
-            </ul>
+            <div class="absolute top-0 left-0 z--1 w-full h-full pointer-events-none transform scale-105 overflow-hidden" style="transform-origin: center center;">
+                <ul id="scene" class="w-full h-full object-cover overflow-hidden">
+                    <li class="w-full h-full object-cover overflow-hidden layer" data-depth="0.2">
+                        <img class="w-full h-full object-cover" src="./images/Decoration.svg" alt="Decoration">
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Content -->
+            <div class="max-w-screen-xl w-full h-full mx-auto py-48 px-8 md:px-16 lg:px-32 overflow-hidden">
+                <!-- Name -->
+                <h6 class="w-full text-base md:text-xl font-medium tracking-wide mb-2">Hi, My name is <span class="font-bold">Priti Rathod</span>.</h6>
+                <!-- Heading -->
+                <h1 class="-ml-1 lg:-ml-3 yellowDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight mb-5 tracking-wide md:tracking-normal">
+                    <span class="px-1 lg:px-2">I</span>
+                    <span class="px-1 lg:px-2">build</span>
+                    <span class="px-1 lg:px-2 italic">Great</span>
+                    <span class="px-1 lg:px-2">user</span>
+                    <span class="px-1 lg:px-2">friendly</span>
+                    <span class="px-1 lg:px-2">Experiences.</span>
+                </h1>
+                <!-- Info -->
+                <div class="w-full flex -ml-1 mb-8">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8 text-gray-800 text-base md:text-lg font-medium">
+                        <div class="flex">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 mt-1 md:mt-px mr-2 text-gray-700" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.414 20.9L17.657 16.657C18.7758 15.5382 19.5377 14.1127 19.8463 12.5609C20.155 11.009 19.9965 9.40053 19.391 7.93874C18.7855 6.47696 17.7601 5.22755 16.4445 4.34852C15.1289 3.46949 13.5822 3.00031 12 3.00031C10.4178 3.00031 8.87107 3.46949 7.55548 4.34852C6.2399 5.22755 5.21452 6.47696 4.60901 7.93874C4.00349 9.40053 3.84504 11.009 4.15369 12.5609C4.46234 14.1127 5.22422 15.5382 6.343 16.657L10.587 20.9C10.7726 21.0858 10.9929 21.2331 11.2354 21.3336C11.478 21.4342 11.738 21.4859 12.0005 21.4859C12.2631 21.4859 12.523 21.4342 12.7656 21.3336C13.0081 21.2331 13.2284 21.0858 13.414 20.9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.1213 13.1213C14.6839 12.5587 15 11.7956 15 11C15 10.2044 14.6839 9.44129 14.1213 8.87868C13.5587 8.31607 12.7956 8 12 8C11.2044 8 10.4413 8.31607 9.87868 8.87868C9.31607 9.44129 9 10.2044 9 11C9 11.7956 9.31607 12.5587 9.87868 13.1213C10.4413 13.6839 11.2044 14 12 14C12.7956 14 13.5587 13.6839 14.1213 13.1213Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Invercargill - New Zealand</span>
+                        </div>
+                        <div class="flex">
+                            <svg class="w-4 h-4 md:w-5 md:h-5 mt-1 md:mt-px mr-2 text-gray-700 transform md:translate-y-px" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 13.255C18.1405 14.4112 15.0844 15.0038 12 15C8.817 15 5.78 14.38 3 13.255M12 12H12.01M16 6V4C16 3.46957 15.7893 2.96086 15.4142 2.58579C15.0391 2.21071 14.5304 2 14 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4V6H16ZM5 20H19C19.5304 20 20.0391 19.7893 20.4142 19.4142C20.7893 19.0391 21 18.5304 21 18V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Web and App Developer</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- CTA -->
+                <a href="javascript:void(0)" class="flex text-sm md:text-lg uppercase tracking-wider">
+                    <div id="cta" class="relative">
+                        <p class="border-4 border-myBlack py-2 px-4 font-bold">See my Work</p>
+                        <div class="absolute top-0 left-0 z--1 w-full h-full border-4 border-myYellow linkBorder"></div>
+                    </div>
+                    
+                </a>
+
+            </div>
 
 
         </div>
