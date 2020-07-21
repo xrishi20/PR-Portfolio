@@ -11,8 +11,16 @@
     <script src="./parallax.js" type="text/javascript"></script>
     <style>
         body {
-            cursor: none;
             transform: translate3d(0,0,0);
+        }
+
+        @media screen and (min-width: 1024px) {
+            body {
+                cursor: none;
+            }
+            a:hover {
+                cursor: none;
+            }
         }
 
         .click {
@@ -35,14 +43,21 @@
                 opacity: 0;
             }
         }
+
+        .link-animation {
+            transform-origin: unset;
+            transform: scale(1.2) translate(-50%, -50%);
+            animation: link-animation 0.3s infinite;
+        }
+
     </style>
     <title>Priti Rathod - Portfolio</title>
 </head>
-<body>
+<body class="relative">
     <main class="relative overflow-hidden">
 
         <!-- Mouse -->
-        <svg class="mouse absolute h-6 w-6 z-50 text-myYellow transform -translate-x-1/2 -translate-y-1/2 pointer-events-none" width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="mouse absolute h-6 w-6 z-50 text-myYellow transform -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden lg:block" width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0)">
         <path class="inner" d="M465.414 365.077L230.747 173.077C226.182 169.354 219.462 170.037 215.739 174.602C214.189 176.503 213.341 178.88 213.339 181.333V501.333C213.334 506.036 216.411 510.188 220.912 511.552C221.915 511.854 222.958 512.005 224.005 512C227.573 511.998 230.903 510.213 232.88 507.243L315.057 384H458.673C464.564 383.993 469.334 379.212 469.327 373.321C469.323 370.126 467.887 367.1 465.414 365.077Z" fill="currentColor"/>
         <path d="M224.006 512C222.958 512.005 221.916 511.854 220.913 511.552C216.412 510.188 213.335 506.037 213.34 501.333V181.333C213.346 175.442 218.126 170.671 224.017 170.677C226.47 170.679 228.847 171.527 230.748 173.077L465.415 365.077C469.975 368.807 470.647 375.527 466.917 380.087C464.894 382.56 461.869 383.996 458.674 384H315.057L232.881 507.243C230.904 510.213 227.574 511.998 224.006 512ZM234.673 203.84V466.112L300.465 367.424C302.441 364.454 305.772 362.668 309.34 362.667H428.807L234.673 203.84Z" fill="#0C0F0A"/>
@@ -63,24 +78,43 @@
 
         <!-- Landing -->
         <div id="landing" class="relative w-full h-screen overflow-hidden">
+
+
             <!-- Background -->
-            <ul id="scene" class="absolute top-0 left-0 w-full h-full object-cover overflow-hidden">
+            <ul id="scene" class="absolute top-0 left-0 w-full h-full object-cover overflow-hidden z-0 transform scale-110">
                 <li class="w-full h-full object-cover overflow-hidden layer" data-depth="0.15">
                     <img class="w-full h-full object-cover" src="./images/Decoration.svg" alt="Decoration">
                 </li>
             </ul>
+
+
         </div>
 
-        <div id="works" class="bg-myYellow w-full h-screen"></div>
-        <div id="skills" class="bg-myTeal w-full h-screen"></div>
-        <div id="work-history" class="bg-myPink w-full h-screen"></div>
+        <!-- Works -->
+        <div id="works" class="w-full h-screen">
+            <!-- Accent Line -->
+            <div class="w-full h-6 bg-myYellow" style="box-shadow: inset 0 0 16px rgba(112, 113, 8, 0.4);"></div>
+        </div>
+
+        <!-- Skills -->
+        <div id="skills" class="w-full h-screen">
+            <!-- Accent Line -->
+            <div class="w-full h-6 bg-myTeal" style="box-shadow: inset 0 0 16px rgba(3, 99, 86, 0.4);"></div>
+        </div>
+
+        <!-- Work History -->
+        <div id="work-history" class="w-full h-screen">
+            <!-- Accent Line -->
+            <div class="w-full h-6 bg-myPink" style="box-shadow: inset 0 0 16px rgba(47, 10, 23, 0.4);"></div>
+        </div>
     </main>
     
 
     <script type="text/javascript">
         var scene = document.getElementById('scene');
         var parallax = new Parallax(scene);
-        var head = document.querySelector('head');
+
+
         var mouse = document.querySelector('.mouse');
         var click1 = document.querySelector('.click1');
         var click2 = document.querySelector('.click2');
@@ -132,7 +166,7 @@
         //Section Colors
         var landing = document.querySelector('#landing');
         var works = document.querySelector('#works');
-        var skillss = document.querySelector('#skills');
+        var skills = document.querySelector('#skills');
         var wHistory = document.querySelector('#work-history');
 
         landing.addEventListener('mouseover', () => {
@@ -155,6 +189,43 @@
             mouse.classList.remove('text-myTeal');
             mouse.classList.add('text-myPink');
         })
+
+        //Links
+        var links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                mouse.classList.add('link-animation');
+            })
+            link.addEventListener('mouseleave', () => {
+                mouse.classList.remove('link-animation');
+            })
+        })
+
+        //Page offset accent
+        var head = document.querySelector('head');
+        var meta = head.firstElementChild;
+
+        var lPos = landing.getBoundingClientRect();
+        var sPos = skills.getBoundingClientRect();
+        var wHPos = wHistory.getBoundingClientRect();
+
+        var lPosY = lPos.y;
+        var sPosY = sPos.y;
+        var wHPosY = wHPos.y;
+
+        window.addEventListener('scroll', () => {
+            if(window.pageYOffset >= lPosY) {
+                meta.content = "#FBFF12";
+            }
+            if(window.pageYOffset >= sPosY) {
+                meta.content = "#41EAD4";
+            }
+            if(window.pageYOffset >= wHPosY) {
+                meta.content = "#FF206E";
+            }
+        })
+
+
     </script>
 
 </body>
