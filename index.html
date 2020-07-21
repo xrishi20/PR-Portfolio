@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Priti Rathod - Portfolio">
+    <meta name="description" content="I am Priti Rathod, Invercargill- New Zealand based Web and App Developer specializing in bespoke, artisanal, single origin, grass fed, fixed gear, and slow roasted Website & Apps for clients of all sizes. Currently working for Market South.">
+    <link rel="shortcut icon" href="./images/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./tailwind.css">
+    <script src="./parallax.js" type="text/javascript"></script>
+    <title>Priti Rathod - Portfolio</title>
+</head>
+<body>
+
+    <!-- Landing -->
+    <div class="relative w-full h-screen overflow-hidden">
+        <ul id="scene" class="absolute top-0 left-0 w-full h-full object-cover">
+            <li class="w-full h-full object-cover layer" data-depth="0.1">
+                <img class="w-full h-full object-cover" src="./images/Decoration.svg" alt="Decoration">
+            </li>
+        </ul>
+    </div>
+    
+
+    <script type="text/javascript">
+        var scene = document.getElementById('scene');
+		var parallax = new Parallax(scene);
+    </script>
+
+</body>
+</html>
