@@ -1,9 +1,9 @@
 <svg width="1440" height="796" viewBox="0 0 1440 796" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_dd)">
-<path d="M858.53 -25.4171L947.191 73.051L817.585 100.6L858.53 -25.4171Z" stroke="#41EAD4" stroke-width="30"/>
+<path d="M874.53 -45.4171L963.191 53.051L833.585 80.5997L874.53 -45.4171Z" stroke="#41EAD4" stroke-width="30"/>
 </g>
 <g filter="url(#filter1_dd)">
-<path d="M843.828 -30.3167L932.489 68.1513L802.883 95.7L843.828 -30.3167Z" stroke="#FBFF12" stroke-width="30"/>
+<path d="M859.828 -50.3167L948.489 48.1513L818.883 75.7L859.828 -50.3167Z" stroke="#FBFF12" stroke-width="30"/>
 </g>
 <g filter="url(#filter2_dd)">
 <path d="M1235.17 596.374L1253.61 727.586L1130.76 677.95L1235.17 596.374Z" stroke="#41EAD4" stroke-width="30"/>
@@ -18,19 +18,19 @@
 <rect x="1357.38" y="201.03" width="130" height="130" transform="rotate(-9.5 1357.38 201.03)" stroke="#FBFF12" stroke-width="30"/>
 </g>
 <g filter="url(#filter6_dd)">
-<rect x="476.696" y="688.689" width="130" height="130" transform="rotate(32 476.696 688.689)" stroke="#41EAD4" stroke-width="30"/>
+<rect x="516.887" y="693.089" width="130" height="130" transform="rotate(20.5 516.887 693.089)" stroke="#41EAD4" stroke-width="30"/>
 </g>
 <g filter="url(#filter7_dd)">
-<rect x="461.22" y="690.811" width="130" height="130" transform="rotate(32 461.22 690.811)" stroke="#FBFF12" stroke-width="30"/>
+<rect x="502.145" y="698.253" width="130" height="130" transform="rotate(20.5 502.145 698.253)" stroke="#FBFF12" stroke-width="30"/>
 </g>
 <g filter="url(#filter8_dd)">
-<circle cx="29" cy="127" r="65" stroke="#41EAD4" stroke-width="30"/>
+<circle cx="22" cy="163" r="65" stroke="#41EAD4" stroke-width="30"/>
 </g>
 <g filter="url(#filter9_dd)">
-<circle cx="15" cy="127" r="65" stroke="#FBFF12" stroke-width="30"/>
+<circle cx="8" cy="163" r="65" stroke="#FBFF12" stroke-width="30"/>
 </g>
 <defs>
-<filter id="filter0_dd" x="756.076" y="-75.9376" width="225.646" height="206.611" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_dd" x="772.076" y="-95.9376" width="225.646" height="206.611" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="4"/>
@@ -44,7 +44,7 @@
 <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
 </filter>
-<filter id="filter1_dd" x="741.375" y="-80.8373" width="225.646" height="206.611" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter1_dd" x="757.375" y="-100.837" width="225.646" height="206.611" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="4"/>
@@ -114,7 +114,7 @@
 <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
 </filter>
-<filter id="filter6_dd" x="381.137" y="666.02" width="232.475" height="232.475" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter6_dd" x="446.057" y="671.786" width="217.901" height="217.901" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="4"/>
@@ -128,7 +128,7 @@
 <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
 </filter>
-<filter id="filter7_dd" x="365.661" y="668.141" width="232.475" height="232.475" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter7_dd" x="431.315" y="676.95" width="217.901" height="217.901" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="4"/>
@@ -142,7 +142,7 @@
 <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
 </filter>
-<filter id="filter8_dd" x="-57" y="45" width="172" height="172" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter8_dd" x="-64" y="81" width="172" height="172" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="4"/>
@@ -156,7 +156,7 @@
 <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
 </filter>
-<filter id="filter9_dd" x="-71" y="45" width="172" height="172" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter9_dd" x="-78" y="81" width="172" height="172" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="4"/>
