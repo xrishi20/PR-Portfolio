@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="theme-color" content="#FBFF12">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Priti Rathod - Portfolio">
@@ -8,45 +9,152 @@
     <link rel="shortcut icon" href="./images/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./tailwind.css">
     <script src="./parallax.js" type="text/javascript"></script>
+    <style>
+        body {
+            cursor: none;
+            transform: translate3d(0,0,0);
+        }
+
+        .click {
+            opacity: 0;
+            transform: rotate(8deg) translateY(-5%) translateX(5%);
+        }
+
+        .click-animation {
+            animation: click 0.15s forwards;
+        }
+
+        @keyframes click {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
     <title>Priti Rathod - Portfolio</title>
 </head>
 <body>
+    <main class="relative overflow-hidden">
 
-    <!-- Mouse -->
-    <svg class="mouse absolute h-6 w-6 z-50 text-myYellow" width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0)">
-    <path class="inner" d="M465.414 365.077L230.747 173.077C226.182 169.354 219.462 170.037 215.739 174.602C214.189 176.503 213.341 178.88 213.339 181.333V501.333C213.334 506.036 216.411 510.188 220.912 511.552C221.915 511.854 222.958 512.005 224.005 512C227.573 511.998 230.903 510.213 232.88 507.243L315.057 384H458.673C464.564 383.993 469.334 379.212 469.327 373.321C469.323 370.126 467.887 367.1 465.414 365.077Z" fill="currentColor"/>
-    <path d="M224.006 512C222.958 512.005 221.916 511.854 220.913 511.552C216.412 510.188 213.335 506.037 213.34 501.333V181.333C213.346 175.442 218.126 170.671 224.017 170.677C226.47 170.679 228.847 171.527 230.748 173.077L465.415 365.077C469.975 368.807 470.647 375.527 466.917 380.087C464.894 382.56 461.869 383.996 458.674 384H315.057L232.881 507.243C230.904 510.213 227.574 511.998 224.006 512ZM234.673 203.84V466.112L300.465 367.424C302.441 364.454 305.772 362.668 309.34 362.667H428.807L234.673 203.84Z" fill="#0C0F0A"/>
-    <!-- Click -->
-    <path class="click" d="M224.006 106.667C218.115 106.667 213.339 101.891 213.339 96V10.667C213.34 4.776 218.115 0 224.006 0C229.897 0 234.673 4.776 234.673 10.667V96C234.673 101.891 229.897 106.667 224.006 106.667Z" fill="#0C0F0A"/>
-    <path class="click" d="M138.673 192H53.34C47.449 192 42.673 187.224 42.673 181.333C42.673 175.442 47.449 170.666 53.34 170.666H138.673C144.564 170.666 149.34 175.442 149.34 181.333C149.34 187.224 144.564 192 138.673 192Z" fill="#0C0F0A"/>
-    <path class="click" d="M394.673 192H309.34C303.449 192 298.673 187.224 298.673 181.333C298.673 175.442 303.449 170.666 309.34 170.666H394.673C400.564 170.666 405.34 175.442 405.34 181.333C405.34 187.224 400.564 192 394.673 192Z" fill="#0C0F0A"/>
-    <path class="click" d="M163.676 131.669C160.845 131.674 158.128 130.554 156.124 128.554L95.772 68.267C91.583 64.078 91.583 57.288 95.772 53.099C99.961 48.91 106.751 48.91 110.94 53.099L171.207 113.451C175.378 117.611 175.386 124.365 171.226 128.536C169.22 130.547 166.495 131.675 163.655 131.67H163.676V131.669Z" fill="#0C0F0A"/>
-    <path class="click" d="M103.324 312.683C97.433 312.694 92.649 307.926 92.638 302.035C92.633 299.195 93.761 296.47 95.772 294.464L156.124 234.112C160.361 230.02 167.114 230.137 171.207 234.374C175.199 238.508 175.199 245.061 171.207 249.194L110.94 309.567C108.92 311.583 106.177 312.705 103.324 312.683Z" fill="#0C0F0A"/>
-    <path class="click" d="M284.337 131.669C278.446 131.68 273.662 126.912 273.651 121.021C273.646 118.181 274.774 115.456 276.785 113.45L337.073 53.098C341.31 49.005 348.063 49.123 352.156 53.36C356.148 57.494 356.148 64.047 352.156 68.18L291.889 128.532C289.888 130.54 287.171 131.669 284.337 131.669Z" fill="#0C0F0A"/>
-    </g>
-    <defs>
-    <clipPath id="clip0">
-    <rect width="512" height="512" fill="white"/>
-    </clipPath>
-    </defs>
-    </svg>
+        <!-- Mouse -->
+        <svg class="mouse absolute h-6 w-6 z-50 text-myYellow transform -translate-x-1/2 -translate-y-1/2 pointer-events-none" width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0)">
+        <path class="inner" d="M465.414 365.077L230.747 173.077C226.182 169.354 219.462 170.037 215.739 174.602C214.189 176.503 213.341 178.88 213.339 181.333V501.333C213.334 506.036 216.411 510.188 220.912 511.552C221.915 511.854 222.958 512.005 224.005 512C227.573 511.998 230.903 510.213 232.88 507.243L315.057 384H458.673C464.564 383.993 469.334 379.212 469.327 373.321C469.323 370.126 467.887 367.1 465.414 365.077Z" fill="currentColor"/>
+        <path d="M224.006 512C222.958 512.005 221.916 511.854 220.913 511.552C216.412 510.188 213.335 506.037 213.34 501.333V181.333C213.346 175.442 218.126 170.671 224.017 170.677C226.47 170.679 228.847 171.527 230.748 173.077L465.415 365.077C469.975 368.807 470.647 375.527 466.917 380.087C464.894 382.56 461.869 383.996 458.674 384H315.057L232.881 507.243C230.904 510.213 227.574 511.998 224.006 512ZM234.673 203.84V466.112L300.465 367.424C302.441 364.454 305.772 362.668 309.34 362.667H428.807L234.673 203.84Z" fill="#0C0F0A"/>
+        <!-- Click -->
+        <path class="click click1" d="M224.006 106.667C218.115 106.667 213.339 101.891 213.339 96V10.667C213.34 4.776 218.115 0 224.006 0C229.897 0 234.673 4.776 234.673 10.667V96C234.673 101.891 229.897 106.667 224.006 106.667Z" fill="#0C0F0A"/>
+        <path class="click click2" d="M138.673 192H53.34C47.449 192 42.673 187.224 42.673 181.333C42.673 175.442 47.449 170.666 53.34 170.666H138.673C144.564 170.666 149.34 175.442 149.34 181.333C149.34 187.224 144.564 192 138.673 192Z" fill="#0C0F0A"/>
+        <path class="click" d="M394.673 192H309.34C303.449 192 298.673 187.224 298.673 181.333C298.673 175.442 303.449 170.666 309.34 170.666H394.673C400.564 170.666 405.34 175.442 405.34 181.333C405.34 187.224 400.564 192 394.673 192Z" fill="#0C0F0A"/>
+        <path class="click click3" d="M163.676 131.669C160.845 131.674 158.128 130.554 156.124 128.554L95.772 68.267C91.583 64.078 91.583 57.288 95.772 53.099C99.961 48.91 106.751 48.91 110.94 53.099L171.207 113.451C175.378 117.611 175.386 124.365 171.226 128.536C169.22 130.547 166.495 131.675 163.655 131.67H163.676V131.669Z" fill="#0C0F0A"/>
+        <path class="click click4" d="M103.324 312.683C97.433 312.694 92.649 307.926 92.638 302.035C92.633 299.195 93.761 296.47 95.772 294.464L156.124 234.112C160.361 230.02 167.114 230.137 171.207 234.374C175.199 238.508 175.199 245.061 171.207 249.194L110.94 309.567C108.92 311.583 106.177 312.705 103.324 312.683Z" fill="#0C0F0A"/>
+        <path class="click click5" d="M284.337 131.669C278.446 131.68 273.662 126.912 273.651 121.021C273.646 118.181 274.774 115.456 276.785 113.45L337.073 53.098C341.31 49.005 348.063 49.123 352.156 53.36C356.148 57.494 356.148 64.047 352.156 68.18L291.889 128.532C289.888 130.54 287.171 131.669 284.337 131.669Z" fill="#0C0F0A"/>
+        </g>
+        <defs>
+        <clipPath id="clip0">
+        <rect width="512" height="512" fill="white"/>
+        </clipPath>
+        </defs>
+        </svg>
 
-    <!-- Landing -->
-    <div class="relative w-full h-screen overflow-hidden">
-        <!-- Background -->
-        <ul id="scene" class="absolute top-0 left-0 w-full h-full object-cover">
-            <li class="w-full h-full object-cover layer" data-depth="0.2">
-                <img class="w-full h-full object-cover" src="./images/Decoration.svg" alt="Decoration">
-            </li>
-        </ul>
-    </div>
+        <!-- Landing -->
+        <div id="landing" class="relative w-full h-screen overflow-hidden">
+            <!-- Background -->
+            <ul id="scene" class="absolute top-0 left-0 w-full h-full object-cover overflow-hidden">
+                <li class="w-full h-full object-cover overflow-hidden layer" data-depth="0.15">
+                    <img class="w-full h-full object-cover" src="./images/Decoration.svg" alt="Decoration">
+                </li>
+            </ul>
+        </div>
+
+        <div id="works" class="bg-myYellow w-full h-screen"></div>
+        <div id="skills" class="bg-myTeal w-full h-screen"></div>
+        <div id="work-history" class="bg-myPink w-full h-screen"></div>
+    </main>
     
 
     <script type="text/javascript">
         var scene = document.getElementById('scene');
         var parallax = new Parallax(scene);
-        
+        var head = document.querySelector('head');
+        var mouse = document.querySelector('.mouse');
+        var click1 = document.querySelector('.click1');
+        var click2 = document.querySelector('.click2');
+        var click3 = document.querySelector('.click3');
+        var click4 = document.querySelector('.click4');
+        var click5 = document.querySelector('.click5');
+
+        document.addEventListener('mousemove', e => {
+            mouse.style.top = e.pageY+"px";
+            mouse.style.left = e.pageX+"px";
+        })
+
+        document.addEventListener('click', () => {
+            click1.classList.add('click-animation');
+
+            setTimeout(() => {
+                click1.classList.remove('click-animation');
+            }, 150)
+        })
+        document.addEventListener('click', () => {
+            click2.classList.add('click-animation');
+
+            setTimeout(() => {
+                click2.classList.remove('click-animation');
+            }, 150)
+        })
+        document.addEventListener('click', () => {
+            click3.classList.add('click-animation');
+
+            setTimeout(() => {
+                click3.classList.remove('click-animation');
+            }, 150)
+        })
+        document.addEventListener('click', () => {
+            click4.classList.add('click-animation');
+
+            setTimeout(() => {
+                click4.classList.remove('click-animation');
+            }, 150)
+        })
+        document.addEventListener('click', () => {
+            click5.classList.add('click-animation');
+
+            setTimeout(() => {
+                click5.classList.remove('click-animation');
+            }, 150)
+        })
+
+        //Section Colors
+        var landing = document.querySelector('#landing');
+        var works = document.querySelector('#works');
+        var skillss = document.querySelector('#skills');
+        var wHistory = document.querySelector('#work-history');
+
+        landing.addEventListener('mouseover', () => {
+            mouse.classList.add('text-myYellow');
+            mouse.classList.remove('text-myTeal');
+            mouse.classList.remove('text-myPink');
+        });
+        works.addEventListener('mouseover', () => {
+            mouse.classList.add('text-myYellow');
+            mouse.classList.remove('text-myTeal');
+            mouse.classList.remove('text-myPink');
+        });
+        skills.addEventListener('mouseover', () => {
+            mouse.classList.remove('text-myYellow');
+            mouse.classList.add('text-myTeal');
+            mouse.classList.remove('text-myPink');
+        });
+        wHistory.addEventListener('mouseover', () => {
+            mouse.classList.remove('text-myYellow');
+            mouse.classList.remove('text-myTeal');
+            mouse.classList.add('text-myPink');
+        })
     </script>
 
 </body>
