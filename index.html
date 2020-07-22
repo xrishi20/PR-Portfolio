@@ -43,12 +43,12 @@
             transform: translate(0.25rem, -0.25rem) translate3d(0,0,0);
         }
 
-        .yellowDecoration span {
+        .yellowDecoration span, .tealDecoration span, .pinkDecoration span {
             position: relative;
             display: inline-block;
         }
 
-        .yellowDecoration span::before {
+        .yellowDecoration span::before, .tealDecoration span::before, .pinkDecoration span::before {
             content: '';
             z-index: -1;
             height: 30%;
@@ -56,7 +56,18 @@
             position: absolute;
             bottom: 5%;
             left: 0;
+        }
+
+        .yellowDecoration span::before {
             background-color: #FBFF12;
+        }
+
+        .tealDecoration span::before {
+            background-color: #41EAD4;
+        }
+
+        .pinkDecoration span::before {
+            background-color: #FF206E;
         }
 
         #landing *::selection {
@@ -205,7 +216,7 @@
                     <span class="px-1 lg:px-2">Works...</span>
                 </h1>
                 <!-- Cards Box -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-8 -ml-3">
                     <!-- Card -->
                     <div id="card1" class="relative w-full h-full">
                         <!-- Foreground -->
@@ -294,9 +305,31 @@
         </div>
 
         <!-- Skills -->
-        <div id="skills" class="w-full h-screen">
+        <div id="skills" class="w-full">
             <!-- Accent Line -->
             <div class="w-full h-6 bg-myTeal" style="box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);"></div>
+            <!-- Content -->
+            <div class="max-w-screen-xl w-full h-full mx-auto py-8 md:py-16 px-8 md:px-16 lg:px-32">
+                <!-- Heading -->
+                <h1 class="-ml-1 lg:-ml-3 tealDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 md:mb-16 tracking-wide md:tracking-normal">
+                    <span class="px-1 lg:px-2">Things</span>
+                    <span class="px-1 lg:px-2">I</span>
+                    <span class="px-1 lg:px-2">am</span>
+                    <span class="px-1 lg:px-2 italic">good</span>
+                    <span class="px-1 lg:px-2">at...</span>
+                </h1>
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </div>
         </div>
 
         <!-- Work History -->
