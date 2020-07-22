@@ -304,6 +304,9 @@
             <!-- Accent Line -->
             <div class="w-full h-6 bg-myPink" style="box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);"></div>
         </div>
+
+        <!-- Footer -->
+        <footer class="py-12 w-full bg-myPink"></footer>
     </main>
     
 
@@ -365,6 +368,7 @@
         var works = document.querySelector('#works');
         var skills = document.querySelector('#skills');
         var wHistory = document.querySelector('#work-history');
+        var footer = document.querySelector('footer');
 
         landing.addEventListener('mouseover', () => {
             mouse.classList.add('text-myYellow');
@@ -385,6 +389,12 @@
             mouse.classList.remove('text-myYellow');
             mouse.classList.remove('text-myTeal');
             mouse.classList.add('text-myPink');
+        })
+        footer.addEventListener('mouseover', () => {
+            mouse.classList.remove('text-myYellow');
+            mouse.classList.remove('text-myTeal');
+            mouse.classList.remove('text-myPink');
+            mouse.classList.add('text-white');
         })
 
         //Links
