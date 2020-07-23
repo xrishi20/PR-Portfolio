@@ -1,519 +1,1135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="theme-color" content="#FBFF12">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Priti Rathod - Web Developer">
-    <meta name="description" content="I am Priti Rathod, Invercargill- New Zealand based Web and App Developer specializing in bespoke, artisanal, single origin, grass fed, fixed gear, and slow roasted Website & Apps for clients of all sizes. Currently working for Market South.">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-    <link rel="shortcut icon" href="./images/icons/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="./tailwind.css">
+  <head>
+    <meta name="theme-color" content="#FBFF12" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Priti Rathod - Web Developer" />
+    <meta
+      name="description"
+      content="I am Priti Rathod, Invercargill- New Zealand based Web and App Developer specializing in bespoke, artisanal, single origin, grass fed, fixed gear, and slow roasted Website & Apps for clients of all sizes. Currently working for Market South."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./images/icons/Logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./tailwind.css" />
     <script src="./parallax.js" type="text/javascript"></script>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      body {
+        transform: translate3d(0, 0, 0);
+        font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+      }
 
+      .fly {
+          animation: fly 800ms;
+      }
+
+      @keyframes fly {
+          0% {
+              transform: translateX(0) translateY(0) rotate(0);
+          }
+
+          100% {
+              transform: translateX(3rem) translateY(-0.5rem) rotate(-15deg);
+          }
+      }
+
+      @media screen and (min-width: 1024px) {
         body {
-            transform: translate3d(0,0,0);
-            font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+          cursor: none;
+        }
+        a:hover {
+          cursor: none;
+        }
+        input,
+        textarea {
+          cursor: none;
+        }
+      }
+
+      .rectangle {
+        position: relative;
+        padding-top: 56.25% !important;
+      }
+
+      .square {
+        position: relative;
+        padding-top: 100% !important;
+      }
+
+      #cta .linkBorder {
+        transform: translate(0.375rem, -0.375rem) translate3d(0, 0, 0);
+        transition: transform 300ms ease-out;
+      }
+
+      #cta:hover .linkBorder {
+        transform: translate(0.25rem, -0.25rem) translate3d(0, 0, 0);
+      }
+
+      .yellowDecoration span,
+      .tealDecoration span,
+      .pinkDecoration span {
+        position: relative;
+        display: inline-block;
+      }
+
+      .yellowDecoration span::before,
+      .tealDecoration span::before,
+      .pinkDecoration span::before {
+        content: "";
+        z-index: -1;
+        height: 30%;
+        width: 100%;
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+      }
+
+      .yellowDecoration span::before {
+        background-color: #fbff12;
+      }
+
+      .tealDecoration span::before {
+        background-color: #41ead4;
+      }
+
+      .pinkDecoration span::before {
+        background-color: #ff206e;
+      }
+
+      #landing *::selection {
+        background: #fbff12;
+        color: #0c0f0a;
+      }
+
+      #works *::selection {
+        background: #fbff12;
+        color: #0c0f0a;
+      }
+
+      #skills *::selection,
+      #card2::selection {
+        background: #41ead4 !important;
+        color: #0c0f0a;
+      }
+
+      #work-history *::selection,
+      #card3::selection {
+        background: #ff206e;
+        color: #0c0f0a;
+      }
+
+      .z--1 {
+        z-index: -1 !important;
+      }
+
+      .click {
+        opacity: 0;
+        transform: rotate(8deg) translateY(-5%) translateX(5%);
+      }
+
+      .click-animation {
+        animation: click 0.15s forwards;
+      }
+
+      @keyframes click {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @media screen and (min-width: 598px) {
+        .social:hover .social-text {
+          max-height: 0;
+          opacity: 0;
+          transform: translateY(1rem);
         }
 
-        @media screen and (min-width: 1024px) {
-            body {
-                cursor: none;
-            }
-            a:hover {
-                cursor: none;
-            }
+        .social-box svg {
+          transition: transform 300ms translate3d(0, 0, 0);
         }
 
-        .rectangle {
-            padding-top: 56.25% !important;
+        .social:hover svg {
+          transform: translateY(1rem);
         }
 
-        #cta .linkBorder {
-            transform: translate(0.375rem, -0.375rem) translate3d(0,0,0);
-            transition: transform 300ms ease-out;
+        .social .social-text {
+          max-height: 3rem;
+          opacity: 1;
+          transform: translateY(0);
+          transition: max-height 300ms, opacity 300ms, tranform 300ms;
         }
+      }
 
-        #cta:hover .linkBorder {
-            transform: translate(0.25rem, -0.25rem) translate3d(0,0,0);
-        }
+      .social-box:hover .social {
+        filter: brightness(0.6);
+        transform: translate3d(0, 0, 0);
+        transition: filter 300ms;
+      }
 
-        .yellowDecoration span, .tealDecoration span, .pinkDecoration span {
-            position: relative;
-            display: inline-block;
-        }
+      .social-box .social:hover {
+        filter: brightness(1);
+        transition: filter 300ms;
+      }
 
-        .yellowDecoration span::before, .tealDecoration span::before, .pinkDecoration span::before {
-            content: '';
-            z-index: -1;
-            height: 30%;
-            width: 100%;
-            position: absolute;
-            bottom: 5%;
-            left: 0;
-        }
-
-        .yellowDecoration span::before {
-            background-color: #FBFF12;
-        }
-
-        .tealDecoration span::before {
-            background-color: #41EAD4;
-        }
-
-        .pinkDecoration span::before {
-            background-color: #FF206E;
-        }
-
-        #landing *::selection {
-            background: #FBFF12;
-            color: #0C0F0A;
-        }
-
-        #works *::selection {
-            background: #FBFF12;
-            color: #0C0F0A;
-        }
-
-        #skills *::selection, #card2::selection {
-            background: #41EAD4 !important;
-            color: #0C0F0A;
-        }
-
-        #work-history *::selection, #card3::selection {
-            background: #FF206E;
-            color: #0C0F0A;
-        }
-
-        .z--1 {
-            z-index: -1 !important;
-        }
-
-        .click {
-            opacity: 0;
-            transform: rotate(8deg) translateY(-5%) translateX(5%);
-        }
-
-        .click-animation {
-            animation: click 0.15s forwards;
-        }
-
-        @keyframes click {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
+      .social .social-text {
+        margin-top: 1rem;
+      }
     </style>
     <title>Priti Rathod - Web Developer</title>
-</head>
-<body class="relative antialiased">
+  </head>
+  <body class="relative antialiased bg-gray-200">
     <main class="relative overflow-hidden text-myBlack">
-
-        <!-- Mouse -->
-        <svg class="mouse absolute h-6 w-6 z-50 text-myYellow transform -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden lg:block" width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Mouse -->
+      <svg
+        class="mouse absolute h-6 w-6 z-50 text-myYellow transform -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden lg:block"
+        width="512"
+        height="512"
+        viewBox="0 0 512 512"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g clip-path="url(#clip0)">
-        <path class="inner" d="M465.414 365.077L230.747 173.077C226.182 169.354 219.462 170.037 215.739 174.602C214.189 176.503 213.341 178.88 213.339 181.333V501.333C213.334 506.036 216.411 510.188 220.912 511.552C221.915 511.854 222.958 512.005 224.005 512C227.573 511.998 230.903 510.213 232.88 507.243L315.057 384H458.673C464.564 383.993 469.334 379.212 469.327 373.321C469.323 370.126 467.887 367.1 465.414 365.077Z" fill="currentColor"/>
-        <path d="M224.006 512C222.958 512.005 221.916 511.854 220.913 511.552C216.412 510.188 213.335 506.037 213.34 501.333V181.333C213.346 175.442 218.126 170.671 224.017 170.677C226.47 170.679 228.847 171.527 230.748 173.077L465.415 365.077C469.975 368.807 470.647 375.527 466.917 380.087C464.894 382.56 461.869 383.996 458.674 384H315.057L232.881 507.243C230.904 510.213 227.574 511.998 224.006 512ZM234.673 203.84V466.112L300.465 367.424C302.441 364.454 305.772 362.668 309.34 362.667H428.807L234.673 203.84Z" fill="#0C0F0A"/>
-        <!-- Click -->
-        <path class="click click1" d="M224.006 106.667C218.115 106.667 213.339 101.891 213.339 96V10.667C213.34 4.776 218.115 0 224.006 0C229.897 0 234.673 4.776 234.673 10.667V96C234.673 101.891 229.897 106.667 224.006 106.667Z" fill="#0C0F0A"/>
-        <path class="click click2" d="M138.673 192H53.34C47.449 192 42.673 187.224 42.673 181.333C42.673 175.442 47.449 170.666 53.34 170.666H138.673C144.564 170.666 149.34 175.442 149.34 181.333C149.34 187.224 144.564 192 138.673 192Z" fill="#0C0F0A"/>
-        <path class="click" d="M394.673 192H309.34C303.449 192 298.673 187.224 298.673 181.333C298.673 175.442 303.449 170.666 309.34 170.666H394.673C400.564 170.666 405.34 175.442 405.34 181.333C405.34 187.224 400.564 192 394.673 192Z" fill="#0C0F0A"/>
-        <path class="click click3" d="M163.676 131.669C160.845 131.674 158.128 130.554 156.124 128.554L95.772 68.267C91.583 64.078 91.583 57.288 95.772 53.099C99.961 48.91 106.751 48.91 110.94 53.099L171.207 113.451C175.378 117.611 175.386 124.365 171.226 128.536C169.22 130.547 166.495 131.675 163.655 131.67H163.676V131.669Z" fill="#0C0F0A"/>
-        <path class="click click4" d="M103.324 312.683C97.433 312.694 92.649 307.926 92.638 302.035C92.633 299.195 93.761 296.47 95.772 294.464L156.124 234.112C160.361 230.02 167.114 230.137 171.207 234.374C175.199 238.508 175.199 245.061 171.207 249.194L110.94 309.567C108.92 311.583 106.177 312.705 103.324 312.683Z" fill="#0C0F0A"/>
-        <path class="click click5" d="M284.337 131.669C278.446 131.68 273.662 126.912 273.651 121.021C273.646 118.181 274.774 115.456 276.785 113.45L337.073 53.098C341.31 49.005 348.063 49.123 352.156 53.36C356.148 57.494 356.148 64.047 352.156 68.18L291.889 128.532C289.888 130.54 287.171 131.669 284.337 131.669Z" fill="#0C0F0A"/>
+          <path
+            class="inner"
+            d="M465.414 365.077L230.747 173.077C226.182 169.354 219.462 170.037 215.739 174.602C214.189 176.503 213.341 178.88 213.339 181.333V501.333C213.334 506.036 216.411 510.188 220.912 511.552C221.915 511.854 222.958 512.005 224.005 512C227.573 511.998 230.903 510.213 232.88 507.243L315.057 384H458.673C464.564 383.993 469.334 379.212 469.327 373.321C469.323 370.126 467.887 367.1 465.414 365.077Z"
+            fill="currentColor"
+          />
+          <path
+            d="M224.006 512C222.958 512.005 221.916 511.854 220.913 511.552C216.412 510.188 213.335 506.037 213.34 501.333V181.333C213.346 175.442 218.126 170.671 224.017 170.677C226.47 170.679 228.847 171.527 230.748 173.077L465.415 365.077C469.975 368.807 470.647 375.527 466.917 380.087C464.894 382.56 461.869 383.996 458.674 384H315.057L232.881 507.243C230.904 510.213 227.574 511.998 224.006 512ZM234.673 203.84V466.112L300.465 367.424C302.441 364.454 305.772 362.668 309.34 362.667H428.807L234.673 203.84Z"
+            fill="#0C0F0A"
+          />
+          <!-- Click -->
+          <path
+            class="click click1"
+            d="M224.006 106.667C218.115 106.667 213.339 101.891 213.339 96V10.667C213.34 4.776 218.115 0 224.006 0C229.897 0 234.673 4.776 234.673 10.667V96C234.673 101.891 229.897 106.667 224.006 106.667Z"
+            fill="#0C0F0A"
+          />
+          <path
+            class="click click2"
+            d="M138.673 192H53.34C47.449 192 42.673 187.224 42.673 181.333C42.673 175.442 47.449 170.666 53.34 170.666H138.673C144.564 170.666 149.34 175.442 149.34 181.333C149.34 187.224 144.564 192 138.673 192Z"
+            fill="#0C0F0A"
+          />
+          <path
+            class="click"
+            d="M394.673 192H309.34C303.449 192 298.673 187.224 298.673 181.333C298.673 175.442 303.449 170.666 309.34 170.666H394.673C400.564 170.666 405.34 175.442 405.34 181.333C405.34 187.224 400.564 192 394.673 192Z"
+            fill="#0C0F0A"
+          />
+          <path
+            class="click click3"
+            d="M163.676 131.669C160.845 131.674 158.128 130.554 156.124 128.554L95.772 68.267C91.583 64.078 91.583 57.288 95.772 53.099C99.961 48.91 106.751 48.91 110.94 53.099L171.207 113.451C175.378 117.611 175.386 124.365 171.226 128.536C169.22 130.547 166.495 131.675 163.655 131.67H163.676V131.669Z"
+            fill="#0C0F0A"
+          />
+          <path
+            class="click click4"
+            d="M103.324 312.683C97.433 312.694 92.649 307.926 92.638 302.035C92.633 299.195 93.761 296.47 95.772 294.464L156.124 234.112C160.361 230.02 167.114 230.137 171.207 234.374C175.199 238.508 175.199 245.061 171.207 249.194L110.94 309.567C108.92 311.583 106.177 312.705 103.324 312.683Z"
+            fill="#0C0F0A"
+          />
+          <path
+            class="click click5"
+            d="M284.337 131.669C278.446 131.68 273.662 126.912 273.651 121.021C273.646 118.181 274.774 115.456 276.785 113.45L337.073 53.098C341.31 49.005 348.063 49.123 352.156 53.36C356.148 57.494 356.148 64.047 352.156 68.18L291.889 128.532C289.888 130.54 287.171 131.669 284.337 131.669Z"
+            fill="#0C0F0A"
+          />
         </g>
         <defs>
-        <clipPath id="clip0">
-        <rect width="512" height="512" fill="white"/>
-        </clipPath>
+          <clipPath id="clip0">
+            <rect width="512" height="512" fill="white" />
+          </clipPath>
         </defs>
-        </svg>
+      </svg>
 
-        <!-- Landing -->
-        <div id="landing" class="relative w-full h-full">
+      <!-- Landing -->
+      <div id="landing" class="relative w-full h-full">
+        <!-- Background -->
+        <div
+          class="absolute top-0 left-0 z--1 w-full h-full pointer-events-none transform scale-105 overflow-hidden"
+          style="transform-origin: center center;"
+        >
+          <ul id="scene" class="w-full h-full object-cover overflow-hidden">
+            <li
+              class="w-full h-full object-cover overflow-hidden layer"
+              data-depth="0.2"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./images/Decoration.svg"
+                alt="Decoration"
+              />
+            </li>
+          </ul>
+        </div>
 
-
-            <!-- Background -->
-            <div class="absolute top-0 left-0 z--1 w-full h-full pointer-events-none transform scale-105 overflow-hidden" style="transform-origin: center center;">
-                <ul id="scene" class="w-full h-full object-cover overflow-hidden">
-                    <li class="w-full h-full object-cover overflow-hidden layer" data-depth="0.2">
-                        <img class="w-full h-full object-cover" src="./images/Decoration.svg" alt="Decoration">
-                    </li>
-                </ul>
+        <!-- Content -->
+        <div
+          class="max-w-screen-xl w-full h-full mx-auto py-48 px-8 md:px-16 lg:px-32 overflow-hidden"
+        >
+          <!-- Name -->
+          <h6
+            class="w-full text-base md:text-xl font-medium tracking-wide mb-2"
+          >
+            Hi, My name is <span class="font-bold">Priti Rathod</span>.
+          </h6>
+          <!-- Heading -->
+          <h1
+            class="-ml-1 lg:-ml-3 yellowDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight mb-5 tracking-wide md:tracking-normal"
+          >
+            <span class="px-1 lg:px-2">I</span>
+            <span class="px-1 lg:px-2">build</span>
+            <span class="px-1 lg:px-2 italic">Great</span>
+            <span class="px-1 lg:px-2">user</span>
+            <span class="px-1 lg:px-2">friendly</span>
+            <span class="px-1 lg:px-2">Experiences.</span>
+          </h1>
+          <!-- Info -->
+          <div class="w-full flex -ml-1 mb-8">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8 text-gray-800 text-base md:text-lg font-medium"
+            >
+              <div class="flex">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 mt-1 md:mt-px mr-2 text-gray-700"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.414 20.9L17.657 16.657C18.7758 15.5382 19.5377 14.1127 19.8463 12.5609C20.155 11.009 19.9965 9.40053 19.391 7.93874C18.7855 6.47696 17.7601 5.22755 16.4445 4.34852C15.1289 3.46949 13.5822 3.00031 12 3.00031C10.4178 3.00031 8.87107 3.46949 7.55548 4.34852C6.2399 5.22755 5.21452 6.47696 4.60901 7.93874C4.00349 9.40053 3.84504 11.009 4.15369 12.5609C4.46234 14.1127 5.22422 15.5382 6.343 16.657L10.587 20.9C10.7726 21.0858 10.9929 21.2331 11.2354 21.3336C11.478 21.4342 11.738 21.4859 12.0005 21.4859C12.2631 21.4859 12.523 21.4342 12.7656 21.3336C13.0081 21.2331 13.2284 21.0858 13.414 20.9Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M14.1213 13.1213C14.6839 12.5587 15 11.7956 15 11C15 10.2044 14.6839 9.44129 14.1213 8.87868C13.5587 8.31607 12.7956 8 12 8C11.2044 8 10.4413 8.31607 9.87868 8.87868C9.31607 9.44129 9 10.2044 9 11C9 11.7956 9.31607 12.5587 9.87868 13.1213C10.4413 13.6839 11.2044 14 12 14C12.7956 14 13.5587 13.6839 14.1213 13.1213Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span>Invercargill - New Zealand</span>
+              </div>
+              <div class="flex">
+                <svg
+                  class="w-4 h-4 md:w-5 md:h-5 mt-1 md:mt-px mr-2 text-gray-700 transform md:translate-y-px"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 13.255C18.1405 14.4112 15.0844 15.0038 12 15C8.817 15 5.78 14.38 3 13.255M12 12H12.01M16 6V4C16 3.46957 15.7893 2.96086 15.4142 2.58579C15.0391 2.21071 14.5304 2 14 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4V6H16ZM5 20H19C19.5304 20 20.0391 19.7893 20.4142 19.4142C20.7893 19.0391 21 18.5304 21 18V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span>Web and App Developer</span>
+              </div>
             </div>
+          </div>
+          <!-- CTA -->
+          <div class="w-full flex">
+            <a
+              id="cta"
+              href="#works"
+              class="relative flex text-sm md:text-lg uppercase tracking-wider focus:outline-none focus:shadow-outline"
+            >
+              <p class="border-4 border-myBlack py-2 px-4 font-bold">
+                See my Work
+              </p>
+              <div
+                class="absolute top-0 left-0 z--1 w-full h-full border-4 border-myYellow linkBorder"
+              ></div>
+            </a>
+          </div>
+        </div>
+      </div>
 
-            <!-- Content -->
-            <div class="max-w-screen-xl w-full h-full mx-auto py-48 px-8 md:px-16 lg:px-32 overflow-hidden">
-                <!-- Name -->
-                <h6 class="w-full text-base md:text-xl font-medium tracking-wide mb-2">Hi, My name is <span class="font-bold">Priti Rathod</span>.</h6>
-                <!-- Heading -->
-                <h1 class="-ml-1 lg:-ml-3 yellowDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight mb-5 tracking-wide md:tracking-normal">
-                    <span class="px-1 lg:px-2">I</span>
-                    <span class="px-1 lg:px-2">build</span>
-                    <span class="px-1 lg:px-2 italic">Great</span>
-                    <span class="px-1 lg:px-2">user</span>
-                    <span class="px-1 lg:px-2">friendly</span>
-                    <span class="px-1 lg:px-2">Experiences.</span>
-                </h1>
-                <!-- Info -->
-                <div class="w-full flex -ml-1 mb-8">
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8 text-gray-800 text-base md:text-lg font-medium">
-                        <div class="flex">
-                            <svg class="w-4 h-4 md:w-5 md:h-5 mt-1 md:mt-px mr-2 text-gray-700" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.414 20.9L17.657 16.657C18.7758 15.5382 19.5377 14.1127 19.8463 12.5609C20.155 11.009 19.9965 9.40053 19.391 7.93874C18.7855 6.47696 17.7601 5.22755 16.4445 4.34852C15.1289 3.46949 13.5822 3.00031 12 3.00031C10.4178 3.00031 8.87107 3.46949 7.55548 4.34852C6.2399 5.22755 5.21452 6.47696 4.60901 7.93874C4.00349 9.40053 3.84504 11.009 4.15369 12.5609C4.46234 14.1127 5.22422 15.5382 6.343 16.657L10.587 20.9C10.7726 21.0858 10.9929 21.2331 11.2354 21.3336C11.478 21.4342 11.738 21.4859 12.0005 21.4859C12.2631 21.4859 12.523 21.4342 12.7656 21.3336C13.0081 21.2331 13.2284 21.0858 13.414 20.9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M14.1213 13.1213C14.6839 12.5587 15 11.7956 15 11C15 10.2044 14.6839 9.44129 14.1213 8.87868C13.5587 8.31607 12.7956 8 12 8C11.2044 8 10.4413 8.31607 9.87868 8.87868C9.31607 9.44129 9 10.2044 9 11C9 11.7956 9.31607 12.5587 9.87868 13.1213C10.4413 13.6839 11.2044 14 12 14C12.7956 14 13.5587 13.6839 14.1213 13.1213Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Invercargill - New Zealand</span>
-                        </div>
-                        <div class="flex">
-                            <svg class="w-4 h-4 md:w-5 md:h-5 mt-1 md:mt-px mr-2 text-gray-700 transform md:translate-y-px" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 13.255C18.1405 14.4112 15.0844 15.0038 12 15C8.817 15 5.78 14.38 3 13.255M12 12H12.01M16 6V4C16 3.46957 15.7893 2.96086 15.4142 2.58579C15.0391 2.21071 14.5304 2 14 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4V6H16ZM5 20H19C19.5304 20 20.0391 19.7893 20.4142 19.4142C20.7893 19.0391 21 18.5304 21 18V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Web and App Developer</span>
-                        </div>
-                    </div>
+      <!-- Works -->
+      <div id="works" class="w-full">
+        <!-- Accent Line -->
+        <div
+          class="w-full h-6 bg-myYellow"
+          style="box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);"
+        ></div>
+        <div
+          class="max-w-screen-xl w-full h-full mx-auto py-8 md:py-16 px-8 md:px-16 lg:px-32"
+        >
+          <!-- Heading -->
+          <h1
+            class="-ml-1 lg:-ml-3 yellowDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 md:mb-16 tracking-wide md:tracking-normal"
+          >
+            <span class="px-1 lg:px-2">Some</span>
+            <span class="px-1 lg:px-2">of</span>
+            <span class="px-1 lg:px-2 italic">my</span>
+            <span class="px-1 lg:px-2">Works...</span>
+          </h1>
+          <!-- Cards Box -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-8 -ml-3"
+          >
+            <!-- Card -->
+            <div id="card1" class="relative w-full h-full">
+              <!-- Foreground -->
+              <div class="bg-white shadow-md w-full h-full flex flex-col">
+                <!-- Image -->
+                <div class="rectangle relative w-full flex-shrink-0">
+                  <img
+                    src="./images/FireFlour-bread.png"
+                    alt=""
+                    class="w-full h-full absolute top-0 left-0 object-cover"
+                  />
                 </div>
-                <!-- CTA -->
-                <div class="w-full flex">
-                    <a id="cta" href="#works" class="relative flex text-sm md:text-lg uppercase tracking-wider">
-                        <p class="border-4 border-myBlack py-2 px-4 font-bold">See my Work</p>
-                        <div class="absolute top-0 left-0 z--1 w-full h-full border-4 border-myYellow linkBorder"></div>
+                <!-- Content -->
+                <div
+                  class="w-full flex-1 p-4 lg:px-6 flex flex-col justify-between"
+                >
+                  <div class="w-full mb-4">
+                    <h6
+                      class="font-medium text-lg text-myBlack uppercase tracking-wide"
+                    >
+                      Fire & Flour Bread
+                    </h6>
+                    <p class="text-base text-gray-800">
+                      Fire & Flour makes use of Squarespace to present their
+                      hand-made community bread brand in a visually appealing
+                      way.
+                    </p>
+                  </div>
+                  <div class="w-full flex">
+                    <a
+                      class="text-base text-yellow-800 flex focus:outline-none focus:shadow-outline"
+                      href="http://www.fireandflourbread.com/"
+                    >
+                      View Project
+                      <svg
+                        class="ml-2 mt-1 w-4 h-4"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10 6H6C5.46957 6 4.96086 6.21071 4.58579 6.58579C4.21071 6.96086 4 7.46957 4 8V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H16C16.5304 20 17.0391 19.7893 17.4142 19.4142C17.7893 19.0391 18 18.5304 18 18V14M14 4H20M20 4V10M20 4L10 14"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
                     </a>
+                  </div>
                 </div>
-
+              </div>
+              <!-- Background -->
+              <div
+                class="w-full h-full bg-myYellow shadow-lg absolute top-0 left-0 z--1 transform translate-x-3 translate-y-3"
+              ></div>
             </div>
-
-
-        </div>
-
-        <!-- Works -->
-        <div id="works" class="w-full">
-            <!-- Accent Line -->
-            <div class="w-full h-6 bg-myYellow" style="box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);"></div>
-            <div class="max-w-screen-xl w-full h-full mx-auto py-8 md:py-16 px-8 md:px-16 lg:px-32">
-                <!-- Heading -->
-                <h1 class="-ml-1 lg:-ml-3 yellowDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 md:mb-16 tracking-wide md:tracking-normal">
-                    <span class="px-1 lg:px-2">Some</span>
-                    <span class="px-1 lg:px-2">of</span>
-                    <span class="px-1 lg:px-2 italic">my</span>
-                    <span class="px-1 lg:px-2">Works...</span>
-                </h1>
-                <!-- Cards Box -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-8 -ml-3">
-                    <!-- Card -->
-                    <div id="card1" class="relative w-full h-full">
-                        <!-- Foreground -->
-                        <div class="bg-white shadow-md w-full h-full flex flex-col">
-                            <!-- Image -->
-                            <div class="rectangle relative w-full flex-shrink-0">
-                                <img src="./images/FireFlour-bread.png" alt="" class="w-full h-full absolute top-0 left-0 object-cover">
-                            </div>
-                            <!-- Content -->
-                            <div class="w-full flex-1 p-4 lg:px-6 flex flex-col justify-between">
-                                <div class="w-full mb-4">
-                                    <h6 class="font-medium text-lg text-myBlack uppercase tracking-wide">Fire & Flour Bread</h6>
-                                    <p class="text-base text-gray-800">Fire & Flour makes use of Squarespace to present their hand-made community bread brand in a visually appealing way.</p>
-                                </div>
-                                <div class="w-full flex">
-                                    <a class="text-base text-yellow-800 flex" href="http://www.fireandflourbread.com/">
-                                    View Project
-                                    <svg class="ml-2 mt-1 w-4 h-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 6H6C5.46957 6 4.96086 6.21071 4.58579 6.58579C4.21071 6.96086 4 7.46957 4 8V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H16C16.5304 20 17.0391 19.7893 17.4142 19.4142C17.7893 19.0391 18 18.5304 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Background -->
-                        <div class="w-full h-full bg-myYellow shadow-lg absolute top-0 left-0 z--1 transform translate-x-3 translate-y-3"></div>
-                    </div>
-                    <!-- Card -->
-                    <div id="card2" class="relative w-full h-full">
-                        <!-- Foreground -->
-                        <div class="bg-white shadow-md w-full h-full flex flex-col">
-                            <!-- Image -->
-                            <div class="rectangle relative w-full flex-shrink-0">
-                                <img src="./images/unfiltered.png" alt="" class="w-full h-full absolute top-0 left-0 object-cover">
-                            </div>
-                            <!-- Content -->
-                            <div class="w-full flex-1 p-4 lg:px-6 flex flex-col justify-between">
-                                <div class="w-full mb-4">
-                                    <h6 class="font-medium text-lg text-myBlack uppercase tracking-wide">Unfiltered</h6>
-                                    <p class="text-base text-gray-800">Unfiltered TV is a global education platform, founded in New Zealand in 2015, dedicated to democratizing the knowledge and wisdom of the world's most successful business leaders.</p>
-                                </div>
-                                <div class="w-full flex">
-                                    <a class="text-base text-teal-800 flex" href="https://www.unfiltered.tv/">
-                                        View Project
-                                        <svg class="ml-2 mt-1 w-4 h-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10 6H6C5.46957 6 4.96086 6.21071 4.58579 6.58579C4.21071 6.96086 4 7.46957 4 8V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H16C16.5304 20 17.0391 19.7893 17.4142 19.4142C17.7893 19.0391 18 18.5304 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Background -->
-                        <div class="w-full h-full bg-myTeal shadow-lg absolute top-0 left-0 z--1 transform translate-x-3 translate-y-3"></div>
-                    </div>
-                    <!-- Card -->
-                    <div id="card3" class="relative w-full h-full">
-                        <!-- Foreground -->
-                        <div class="bg-white shadow-md w-full h-full flex flex-col">
-                            <!-- Image -->
-                            <div class="rectangle relative w-full flex-shrink-0">
-                                <img src="./images/Parenting-Place.png" alt="" class="w-full h-full absolute top-0 left-0 object-cover">
-                            </div>
-                            <!-- Content -->
-                            <div class="w-full flex-1 p-4 lg:px-6 flex flex-col justify-between">
-                                <div class="w-full mb-4">
-                                    <h6 class="font-medium text-lg text-myBlack uppercase tracking-wide">Parenting Place</h6>
-                                    <p class="text-base text-gray-800">The parenting place website is a WordPress website. Every page of its site has been designed cleanly with inhouse photographer.</p>
-                                </div>
-                                <div class="w-full flex">
-                                    <a class="text-base text-pink-800 flex" href="https://parentingplace.nz/">
-                                        View Project
-                                        <svg class="ml-2 mt-1 w-4 h-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10 6H6C5.46957 6 4.96086 6.21071 4.58579 6.58579C4.21071 6.96086 4 7.46957 4 8V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H16C16.5304 20 17.0391 19.7893 17.4142 19.4142C17.7893 19.0391 18 18.5304 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Background -->
-                        <div class="w-full h-full bg-myPink shadow-lg absolute top-0 left-0 z--1 transform translate-x-3 translate-y-3"></div>
-                    </div>
+            <!-- Card -->
+            <div id="card2" class="relative w-full h-full">
+              <!-- Foreground -->
+              <div class="bg-white shadow-md w-full h-full flex flex-col">
+                <!-- Image -->
+                <div class="rectangle relative w-full flex-shrink-0">
+                  <img
+                    src="./images/unfiltered.png"
+                    alt=""
+                    class="w-full h-full absolute top-0 left-0 object-cover"
+                  />
                 </div>
-
+                <!-- Content -->
+                <div
+                  class="w-full flex-1 p-4 lg:px-6 flex flex-col justify-between"
+                >
+                  <div class="w-full mb-4">
+                    <h6
+                      class="font-medium text-lg text-myBlack uppercase tracking-wide"
+                    >
+                      Unfiltered
+                    </h6>
+                    <p class="text-base text-gray-800">
+                      Unfiltered TV is a global education platform, founded in
+                      New Zealand in 2015, dedicated to democratizing the
+                      knowledge and wisdom of the world's most successful
+                      business leaders.
+                    </p>
+                  </div>
+                  <div class="w-full flex">
+                    <a
+                      class="text-base text-teal-800 flex focus:outline-none focus:shadow-outline"
+                      href="https://www.unfiltered.tv/"
+                    >
+                      View Project
+                      <svg
+                        class="ml-2 mt-1 w-4 h-4"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10 6H6C5.46957 6 4.96086 6.21071 4.58579 6.58579C4.21071 6.96086 4 7.46957 4 8V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H16C16.5304 20 17.0391 19.7893 17.4142 19.4142C17.7893 19.0391 18 18.5304 18 18V14M14 4H20M20 4V10M20 4L10 14"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Background -->
+              <div
+                class="w-full h-full bg-myTeal shadow-lg absolute top-0 left-0 z--1 transform translate-x-3 translate-y-3"
+              ></div>
             </div>
-
+            <!-- Card -->
+            <div id="card3" class="relative w-full h-full">
+              <!-- Foreground -->
+              <div class="bg-white shadow-md w-full h-full flex flex-col">
+                <!-- Image -->
+                <div class="rectangle relative w-full flex-shrink-0">
+                  <img
+                    src="./images/Parenting-Place.png"
+                    alt=""
+                    class="w-full h-full absolute top-0 left-0 object-cover"
+                  />
+                </div>
+                <!-- Content -->
+                <div
+                  class="w-full flex-1 p-4 lg:px-6 flex flex-col justify-between"
+                >
+                  <div class="w-full mb-4">
+                    <h6
+                      class="font-medium text-lg text-myBlack uppercase tracking-wide"
+                    >
+                      Parenting Place
+                    </h6>
+                    <p class="text-base text-gray-800">
+                      The parenting place website is a WordPress website. Every
+                      page of its site has been designed cleanly with inhouse
+                      photographer.
+                    </p>
+                  </div>
+                  <div class="w-full flex">
+                    <a
+                      class="text-base text-pink-800 flex focus:outline-none focus:shadow-outline"
+                      href="https://parentingplace.nz/"
+                    >
+                      View Project
+                      <svg
+                        class="ml-2 mt-1 w-4 h-4"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10 6H6C5.46957 6 4.96086 6.21071 4.58579 6.58579C4.21071 6.96086 4 7.46957 4 8V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H16C16.5304 20 17.0391 19.7893 17.4142 19.4142C17.7893 19.0391 18 18.5304 18 18V14M14 4H20M20 4V10M20 4L10 14"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Background -->
+              <div
+                class="w-full h-full bg-myPink shadow-lg absolute top-0 left-0 z--1 transform translate-x-3 translate-y-3"
+              ></div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Skills -->
-        <div id="skills" class="w-full">
-            <!-- Accent Line -->
-            <div class="w-full h-6 bg-myTeal" style="box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);"></div>
-            <!-- Content -->
-            <div class="max-w-screen-xl w-full h-full mx-auto py-8 md:py-16 px-8 md:px-16 lg:px-32">
-                <!-- Heading -->
-                <h1 class="-ml-1 lg:-ml-3 tealDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 md:mb-16 tracking-wide md:tracking-normal">
-                    <span class="px-1 lg:px-2">Some</span>
-                    <span class="px-1 lg:px-2">things</span>
-                    <span class="px-1 lg:px-2">about</span>
-                    <span class="px-1 lg:px-2">me...</span>
-                </h1>
+      <!-- About -->
+      <div id="skills" class="w-full">
+        <!-- Accent Line -->
+        <div
+          class="w-full h-6 bg-myTeal"
+          style="box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);"
+        ></div>
+        <!-- Content -->
+        <div
+          class="max-w-screen-xl w-full h-full mx-auto py-8 md:py-16 px-8 md:px-16 lg:px-32"
+        >
+          <!-- Heading -->
+          <h1
+            class="-ml-1 lg:-ml-3 tealDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 md:mb-16 tracking-wide md:tracking-normal"
+          >
+            <span class="px-1 lg:px-2">Some</span>
+            <span class="px-1 lg:px-2">things</span>
+            <span class="px-1 lg:px-2">about</span>
+            <span class="px-1 lg:px-2">me...</span>
+          </h1>
 
-                <p class="text-xl md:text-3xl mb-8 text-gray-800 tracking-wide">
-                    "I have worked in a variety of environments, from <span class="italic">mega-consultancies</span> to <span class="italic">small-ish</span> agencies to <span class="italic"></span>product companies. From workflow diagrams to detailed user interface mockups, I love shaping and <span class="italic">crafting</span> on-screen experiences."
+          <p class="text-xl md:text-3xl mb-8 text-gray-800 tracking-wide">
+            "I have worked in a variety of environments, from
+            <span class="italic">mega-consultancies</span> to
+            <span class="italic">small-ish</span> agencies to
+            <span class="italic"></span>product companies. From workflow
+            diagrams to detailed user interface mockups, I love shaping and
+            <span class="italic">crafting</span> on-screen experiences."
+          </p>
+
+          <!-- Skills -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 tracking-wide mb-4">
+            <!-- Technical Skills -->
+            <div class="flex flex-col">
+              <h3
+                class="text-sm md:text-base uppercase text-gray-700 font-medium tracking-wider mb-4"
+              >
+                Technical Skills
+              </h3>
+              <!-- List -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 sm:gap-8 md:gap-4 flex-1 text-lg md:text-2xl"
+              >
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/Craft CMS.svg"
+                    alt="cms"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">Craft CMS</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/CSS.svg"
+                    alt="css"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">CSS3</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/html-5.svg"
+                    alt="html"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">HTML5</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/php.svg"
+                    alt="php"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">PHP</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/Twig.svg"
+                    alt="twig"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">Twig</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/SASS.svg"
+                    alt="sass"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">SASS</p>
+                </div>
+              </div>
+            </div>
+            <!-- Soft Skills -->
+            <div class="flex flex-col">
+              <h3
+                class="text-sm md:text-base uppercase text-gray-700 font-medium tracking-wider mb-4"
+              >
+                Soft Skills
+              </h3>
+              <!-- List -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 sm:gap-8 md:gap-4 flex-1 text-lg md:text-2xl"
+              >
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/learning.svg"
+                    alt="learning"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">Constant Learning</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/empathy.svg"
+                    alt="empathy"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">Empathy</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/communication.svg"
+                    alt="communication"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">Good Communication</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/positive.svg"
+                    alt="positive"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">Positive Attitude</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/logic.svg"
+                    alt="problem"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">Problem Solving</p>
+                </div>
+                <div class="flex items-center w-full">
+                  <img
+                    src="./images/icons/team.svg"
+                    alt="team"
+                    class="flex-shrink-0 h-8 w-8 mr-4"
+                  />
+                  <p class="flex-1">Team Player</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work History -->
+      <div id="work-history" class="w-full">
+        <!-- Accent Line -->
+        <div
+          class="w-full h-6 bg-myPink"
+          style="box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);"
+        ></div>
+        <!-- Content -->
+        <div
+          class="max-w-screen-xl w-full h-full mx-auto py-8 md:py-16 px-8 md:px-16 lg:px-32"
+        >
+          <!-- Heading -->
+          <h1
+            class="-ml-1 lg:-ml-3 pinkDecoration flex flex-wrap w-full text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8 md:mb-16 tracking-wide md:tracking-normal"
+          >
+            <span class="px-1 lg:px-2">Here's</span>
+            <span class="px-1 lg:px-2">my</span>
+            <span class="px-1 lg:px-2">Work</span>
+            <span class="px-1 lg:px-2">History...</span>
+          </h1>
+
+          <!-- Table -->
+          <div class="w-full grid grid-cols-1 gap-12 -ml-2 mb-16">
+            <!-- Job -->
+            <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-8">
+              <div class="col-span-2 w-full grid grid-cols-1">
+                <h3 class="text-xl md:text-3xl font-medium tracking-wide">
+                  OMNI HEALTH LTD
+                </h3>
+                <p class="text-base md:text-xl text-gray-700">
+                  Mobile Application Developer | Auckland, NZ
                 </p>
-                
-                <!-- Skills -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 tracking-wide">
-                    <!-- Technical Skills -->
-                    <div class="flex flex-col">
-                        <h3 class="text-sm md:text-base uppercase text-gray-700 tracking-wider mb-4">
-                            Technical Skills
-                        </h3>
-                        <!-- List -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 sm:gap-8 md:gap-4 flex-1 text-lg md:text-2xl">
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/Craft CMS.svg" alt="cms" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">Craft CMS</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/CSS.svg" alt="css" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">CSS3</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/html-5.svg" alt="html" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">HTML5</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/php.svg" alt="php" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">PHP</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/Twig.svg" alt="twig" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">Twig</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/SASS.svg" alt="sass" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">SASS</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Soft Skills -->
-                    <div class="flex flex-col">
-                        <h3 class="text-sm md:text-base uppercase text-gray-700 tracking-wider mb-4">
-                            Soft Skills
-                        </h3>
-                        <!-- List -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 sm:gap-8 md:gap-4 flex-1 text-lg md:text-2xl">
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/learning.svg" alt="learning" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">Constant Learning</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/empathy.svg" alt="empathy" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">Empathy</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/communication.svg" alt="communication" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">Good Communication</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/positive.svg" alt="positive" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">Positive Attitude</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/logic.svg" alt="problem" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">Problem Solving</p>
-                            </div>
-                            <div class="flex items-center w-full">
-                                <img src="./images/icons/team.svg" alt="team" class="flex-shrink-0 h-8 w-8 mr-4">
-                                <p class="flex-1">Team Player</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <!-- From To -->
+              <p
+                class="text-left sm:text-right text-base md:text-2xl font-medium text-gray-700"
+              >
+                July 16 - Sept. 17
+              </p>
             </div>
-        </div>
+            <!-- Job -->
+            <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-8">
+              <div class="col-span-2 w-full grid grid-cols-1">
+                <h3 class="text-xl md:text-3xl font-medium tracking-wide">
+                  ARBRE HEALTH LTD
+                </h3>
+                <p class="text-base md:text-xl text-gray-700">
+                  Software Developer | Auckland, NZ
+                </p>
+              </div>
+              <!-- From To -->
+              <p
+                class="text-left sm:text-right text-base md:text-2xl font-medium text-gray-700"
+              >
+                Sept. 17 - Nov. 18
+              </p>
+            </div>
+            <!-- Job -->
+            <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-8">
+              <div class="col-span-2 w-full grid grid-cols-1">
+                <h3 class="text-xl md:text-3xl font-medium tracking-wide">
+                  MARKET SOUTH LTD
+                </h3>
+                <p class="text-base md:text-xl text-gray-700">
+                  Web Developer | Invercargill, NZ
+                </p>
+              </div>
+              <!-- From To -->
+              <p
+                class="text-left sm:text-right text-base md:text-2xl font-medium text-gray-700"
+              >
+                Nov. 18 - <span class="font-medium text-gray-800">Present</span>
+              </p>
+            </div>
+          </div>
 
-        <!-- Work History -->
-        <div id="work-history" class="w-full h-screen">
-            <!-- Accent Line -->
-            <div class="w-full h-6 bg-myPink" style="box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);"></div>
-        </div>
+          <!-- Line -->
+          <div class="w-full h-px bg-myPink mb-16 -ml-2"></div>
 
-        <!-- Footer -->
-        <footer class="py-12 w-full bg-myPink"></footer>
+          <!-- Form -->
+
+          <div class="w-full relative -ml-2">
+            <div class="w-full bg-white shadow-md p-4 sm:p-8 lg:px-16">
+              <p class="text-2xl md:text-4xl font-bold mb-8 leading-tight">
+                Got something to say?<span
+                  class="pl-2 text-gray-700 font-normal text-sm md:text-lg"
+                  >(I'll read it. Promise! 🤞🏻)</span
+                >
+              </p>
+
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-8 mb-6"
+              >
+                <div class="flex flex-col lg:col-span-2">
+                  <p
+                    class="text-base font-medium text-gray-700 uppercase tracking-wider mb-2"
+                  >
+                    Your Name
+                  </p>
+                  <input
+                    type="text"
+                    class="w-full focus:outline-none focus:shadow-outline border-2 border-myBlack py-2 px-4"
+                    placeholder="Priti Rathod"
+                  />
+                </div>
+                <div class="flex flex-col lg:col-span-3">
+                  <p
+                    class="text-base font-medium text-gray-700 uppercase tracking-wider mb-2"
+                  >
+                    Your Email
+                  </p>
+                  <input
+                    type="email"
+                    class="w-full focus:outline-none focus:shadow-outline border-2 border-myBlack py-2 px-4"
+                    placeholder="example@email.com"
+                  />
+                </div>
+              </div>
+              <div class="w-full mb-4">
+                <p
+                  class="text-base font-medium text-gray-700 uppercase tracking-wider mb-2"
+                >
+                  Your Message
+                </p>
+                <textarea
+                  class="w-full focus:outline-none focus:shadow-outline border-2 border-myBlack py-2 px-4"
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="8"
+                ></textarea>
+              </div>
+
+              <!-- Submit -->
+              <div class="w-full flex">
+                <button
+                  class="flex items-center relative py-2 px-4 bg-myPink text-sm md:text-lg tracking-wider font-bold focus:outline-none focus:shadow-outline overflow-hidden submit"
+                >
+                  <span>Send</span>
+                  <svg
+                    class="ml-2 mt-1 h-6 w-6 plane"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 512 512"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            d="M107.69,323.157c5.137,8.066,15.128,11.249,23.821,8.008l314.921-114.789c4.984-1.817,9.044-5.542,11.286-10.357
+                                                c2.242-4.814,2.482-10.323,0.668-15.315c-19.092-52.532-77.958-78.681-129.748-57.273c-1.067,0.441,0.413-0.233-30.177,14.753
+                                                l-59.288-46.875c-5.442-4.303-12.721-5.475-19.233-3.101l-74.544,27.171c-6.404,2.334-11.181,7.775-12.674,14.434
+                                                c-1.493,6.66,0.503,13.622,5.296,18.474l44.001,44.54l-79.998,36.931L89.27,219.736c-5.939-9.327-18.304-12.066-27.617-6.117
+                                                c-9.313,5.948-12.047,18.33-6.108,27.657C63.459,253.703,100.134,311.292,107.69,323.157z M224.678,227.244
+                                                c5.923-2.734,10.143-8.189,11.307-14.616c1.164-6.426-0.875-13.018-5.461-17.661l-42.12-42.635l34.737-12.662l60.416,47.767
+                                                c6.04,4.774,14.277,5.656,21.189,2.267l39.702-19.47c24.585-9.878,50.99-1.618,66.222,16.547L132.788,288.07
+                                                c-0.982-1.542-8.315-13.057-9.058-14.223L224.678,227.244z"
+                            fill="currentColor"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                  <input
+                    type="submit"
+                    value=""
+                    class="w-full h-full absolute top-0 left-0 opacity-0"
+                  />
+                </button>
+              </div>
+            </div>
+            <!-- Background -->
+            <div
+              class="w-full h-full bg-myPink absolute top-0 left-0 shadow-lg z--1 transform translate-x-3 translate-y-3"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="w-full overflow-hidden">
+        <!-- Contact -->
+        <div class="w-full grid grid-cols-1 sm:grid-cols-3 social-box">
+          <a
+            href="https://github.com/reachpriti12"
+            class="bg-myYellow p-8 flex flex-col justify-center items-center social focus:outline-none focus:shadow-outline"
+          >
+            <svg
+              class="flex-shrink-0 w-1/6 h-auto object-cover"
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24.0002 0C10.818 0 0 10.8179 0 24C0 35.2489 7.89337 45.4673 18.3751 48V40.0598C17.3366 40.2872 16.3807 40.2938 15.3235 39.9822C13.9051 39.5636 12.7527 38.6188 11.8972 37.1781C11.3519 36.2582 10.3855 35.2606 9.37727 35.3339L9.13007 32.5323C11.3101 32.3456 13.1961 33.8606 14.3157 35.7415C14.813 36.5779 15.3854 37.0682 16.12 37.285C16.8301 37.4941 17.5925 37.3938 18.481 37.08C18.704 35.3013 19.5188 34.6355 20.1344 33.698V33.6965C13.8832 32.7642 11.3918 29.4478 10.403 26.8301C9.09272 23.3544 9.79585 19.0122 12.1129 16.2682C12.1579 16.2147 12.2392 16.0748 12.2077 15.9771C11.1453 12.7679 12.4399 10.1133 12.4875 9.83167C13.7136 10.1942 13.9128 9.46692 17.8134 11.8367L18.4876 12.2417C18.7696 12.4098 18.6809 12.3138 18.9629 12.2926C20.5915 11.8502 22.3083 11.606 23.9998 11.584C25.7042 11.606 27.41 11.8502 29.1059 12.3105L29.3242 12.3325C29.3052 12.3296 29.3835 12.3186 29.515 12.2402C34.3875 9.28894 34.2124 10.2535 35.5191 9.82874C35.5663 10.1107 36.8437 12.8086 35.7926 15.9771C35.6509 16.4136 40.0169 20.4115 37.597 26.829C36.6082 29.4478 34.1172 32.7642 27.8659 33.6965V33.698C28.6672 34.9193 29.63 35.569 29.6249 38.0885V48C40.107 45.4673 48 35.2489 48 24C48.0004 10.8179 37.1824 0 24.0002 0V0Z"
+                fill="currentColor"
+              />
+            </svg>
+            <p class="social-text text-base md:text-4xl font-medium">Github</p>
+          </a>
+          <a
+            href=""
+            class="bg-myTeal p-8 flex flex-col justify-center items-center social focus:outline-none focus:shadow-outline"
+          >
+            <svg
+              class="flex-shrink-0 w-1/6 h-auto object-cover"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="552.77px"
+              height="552.77px"
+              viewBox="0 0 552.77 552.77"
+            >
+              <g>
+                <g>
+                  <path
+                    d="M17.95,528.854h71.861c9.914,0,17.95-8.037,17.95-17.951V196.8c0-9.915-8.036-17.95-17.95-17.95H17.95
+                                    C8.035,178.85,0,186.885,0,196.8v314.103C0,520.816,8.035,528.854,17.95,528.854z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M17.95,123.629h71.861c9.914,0,17.95-8.036,17.95-17.95V41.866c0-9.914-8.036-17.95-17.95-17.95H17.95
+                                    C8.035,23.916,0,31.952,0,41.866v63.813C0,115.593,8.035,123.629,17.95,123.629z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M525.732,215.282c-10.098-13.292-24.988-24.223-44.676-32.791c-19.688-8.562-41.42-12.846-65.197-12.846
+                                    c-48.268,0-89.168,18.421-122.699,55.27c-6.672,7.332-11.523,5.729-11.523-4.186V196.8c0-9.915-8.037-17.95-17.951-17.95h-64.192
+                                    c-9.915,0-17.95,8.035-17.95,17.95v314.103c0,9.914,8.036,17.951,17.95,17.951h71.861c9.915,0,17.95-8.037,17.95-17.951V401.666
+                                    c0-45.508,2.748-76.701,8.244-93.574c5.494-16.873,15.66-30.422,30.488-40.649c14.83-10.227,31.574-15.343,50.24-15.343
+                                    c14.572,0,27.037,3.58,37.393,10.741c10.355,7.16,17.834,17.19,22.436,30.104c4.604,12.912,6.904,41.354,6.904,85.33v132.627
+                                    c0,9.914,8.035,17.951,17.949,17.951h71.861c9.914,0,17.949-8.037,17.949-17.951V333.02c0-31.445-1.982-55.607-5.941-72.48
+                                    S535.836,228.581,525.732,215.282z"
+                    fill="currentColor"
+                  />
+                </g>
+              </g>
+            </svg>
+            <p class="social-text text-base md:text-4xl font-medium">
+              LinkedIn
+            </p>
+          </a>
+          <a
+            href=""
+            class="bg-myPink p-8 flex flex-col justify-center items-center social focus:outline-none focus:shadow-outline"
+          >
+            <svg
+              class="flex-shrink-0 w-1/6 h-auto object-cover"
+              height="511pt"
+              viewBox="0 0 511 511.9"
+              width="511pt"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"
+                fill="currentColor"
+              />
+              <path
+                d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"
+                fill="currentColor"
+              />
+              <path
+                d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"
+                fill="currentColor"
+              />
+            </svg>
+            <p class="social-text text-base md:text-4xl font-medium">
+              Instagram
+            </p>
+          </a>
+        </div>
+      </footer>
     </main>
-    
 
     <script type="text/javascript">
-        var scene = document.getElementById('scene');
-        var parallax = new Parallax(scene);
+      var scene = document.getElementById("scene");
+      var parallax = new Parallax(scene);
 
+      var mouse = document.querySelector(".mouse");
+      var click1 = document.querySelector(".click1");
+      var click2 = document.querySelector(".click2");
+      var click3 = document.querySelector(".click3");
+      var click4 = document.querySelector(".click4");
+      var click5 = document.querySelector(".click5");
 
-        var mouse = document.querySelector('.mouse');
-        var click1 = document.querySelector('.click1');
-        var click2 = document.querySelector('.click2');
-        var click3 = document.querySelector('.click3');
-        var click4 = document.querySelector('.click4');
-        var click5 = document.querySelector('.click5');
+      document.addEventListener("mousemove", (e) => {
+        mouse.style.top = e.pageY + "px";
+        mouse.style.left = e.pageX + "px";
+      });
 
-        document.addEventListener('mousemove', e => {
-            mouse.style.top = e.pageY+"px";
-            mouse.style.left = e.pageX+"px";
-        })
+      document.addEventListener("click", () => {
+        click1.classList.add("click-animation");
 
-        document.addEventListener('click', () => {
-            click1.classList.add('click-animation');
+        setTimeout(() => {
+          click1.classList.remove("click-animation");
+        }, 150);
+      });
+      document.addEventListener("click", () => {
+        click2.classList.add("click-animation");
 
-            setTimeout(() => {
-                click1.classList.remove('click-animation');
-            }, 150)
-        })
-        document.addEventListener('click', () => {
-            click2.classList.add('click-animation');
+        setTimeout(() => {
+          click2.classList.remove("click-animation");
+        }, 150);
+      });
+      document.addEventListener("click", () => {
+        click3.classList.add("click-animation");
 
-            setTimeout(() => {
-                click2.classList.remove('click-animation');
-            }, 150)
-        })
-        document.addEventListener('click', () => {
-            click3.classList.add('click-animation');
+        setTimeout(() => {
+          click3.classList.remove("click-animation");
+        }, 150);
+      });
+      document.addEventListener("click", () => {
+        click4.classList.add("click-animation");
 
-            setTimeout(() => {
-                click3.classList.remove('click-animation');
-            }, 150)
-        })
-        document.addEventListener('click', () => {
-            click4.classList.add('click-animation');
+        setTimeout(() => {
+          click4.classList.remove("click-animation");
+        }, 150);
+      });
+      document.addEventListener("click", () => {
+        click5.classList.add("click-animation");
 
-            setTimeout(() => {
-                click4.classList.remove('click-animation');
-            }, 150)
-        })
-        document.addEventListener('click', () => {
-            click5.classList.add('click-animation');
+        setTimeout(() => {
+          click5.classList.remove("click-animation");
+        }, 150);
+      });
 
-            setTimeout(() => {
-                click5.classList.remove('click-animation');
-            }, 150)
-        })
+      //Section Colors
+      var landing = document.querySelector("#landing");
+      var works = document.querySelector("#works");
+      var skills = document.querySelector("#skills");
+      var wHistory = document.querySelector("#work-history");
+      var footer = document.querySelector("footer");
 
-        //Section Colors
-        var landing = document.querySelector('#landing');
-        var works = document.querySelector('#works');
-        var skills = document.querySelector('#skills');
-        var wHistory = document.querySelector('#work-history');
-        var footer = document.querySelector('footer');
+      landing.addEventListener("mouseover", () => {
+        mouse.classList.add("text-myYellow");
+        mouse.classList.remove("text-myTeal");
+        mouse.classList.remove("text-myPink");
+      });
+      works.addEventListener("mouseover", () => {
+        mouse.classList.add("text-myYellow");
+        mouse.classList.remove("text-myTeal");
+        mouse.classList.remove("text-myPink");
+      });
+      skills.addEventListener("mouseover", () => {
+        mouse.classList.remove("text-myYellow");
+        mouse.classList.add("text-myTeal");
+        mouse.classList.remove("text-myPink");
+      });
+      wHistory.addEventListener("mouseover", () => {
+        mouse.classList.remove("text-myYellow");
+        mouse.classList.remove("text-myTeal");
+        mouse.classList.add("text-myPink");
+      });
+      footer.addEventListener("mouseover", () => {
+        mouse.classList.remove("text-myYellow");
+        mouse.classList.remove("text-myTeal");
+        mouse.classList.remove("text-myPink");
+        mouse.classList.add("text-white");
+      });
 
-        landing.addEventListener('mouseover', () => {
-            mouse.classList.add('text-myYellow');
-            mouse.classList.remove('text-myTeal');
-            mouse.classList.remove('text-myPink');
-        });
-        works.addEventListener('mouseover', () => {
-            mouse.classList.add('text-myYellow');
-            mouse.classList.remove('text-myTeal');
-            mouse.classList.remove('text-myPink');
-        });
-        skills.addEventListener('mouseover', () => {
-            mouse.classList.remove('text-myYellow');
-            mouse.classList.add('text-myTeal');
-            mouse.classList.remove('text-myPink');
-        });
-        wHistory.addEventListener('mouseover', () => {
-            mouse.classList.remove('text-myYellow');
-            mouse.classList.remove('text-myTeal');
-            mouse.classList.add('text-myPink');
-        })
-        footer.addEventListener('mouseover', () => {
-            mouse.classList.remove('text-myYellow');
-            mouse.classList.remove('text-myTeal');
-            mouse.classList.remove('text-myPink');
-            mouse.classList.add('text-white');
-        })
+      //Page offset accent
+      var head = document.querySelector("head");
+      var meta = head.firstElementChild;
 
-        //Page offset accent
-        var head = document.querySelector('head');
-        var meta = head.firstElementChild;
+      var lPos = landing.getBoundingClientRect();
+      var sPos = skills.getBoundingClientRect();
+      var wHPos = wHistory.getBoundingClientRect();
 
-        var lPos = landing.getBoundingClientRect();
-        var sPos = skills.getBoundingClientRect();
-        var wHPos = wHistory.getBoundingClientRect();
+      var lPosY = lPos.y;
+      var sPosY = sPos.y;
+      var wHPosY = wHPos.y;
 
-        var lPosY = lPos.y;
-        var sPosY = sPos.y;
-        var wHPosY = wHPos.y;
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset >= lPosY) {
+          meta.content = "#FBFF12";
+        }
+        if (window.pageYOffset >= sPosY) {
+          meta.content = "#41EAD4";
+        }
+        if (window.pageYOffset >= wHPosY) {
+          meta.content = "#FF206E";
+        }
+      });
 
-        window.addEventListener('scroll', () => {
-            if(window.pageYOffset >= lPosY) {
-                meta.content = "#FBFF12";
-            }
-            if(window.pageYOffset >= sPosY) {
-                meta.content = "#41EAD4";
-            }
-            if(window.pageYOffset >= wHPosY) {
-                meta.content = "#FF206E";
-            }
-        })
+      //Submit Animation
+      var submit = document.querySelector('.submit');
+      var plane = document.querySelector('.plane');
 
+      submit.addEventListener("click", () => {
+        plane.classList.add("fly");
 
+        setTimeout(() => {
+          plane.classList.remove("fly");
+        }, 800);
+      });
     </script>
-
-</body>
+  </body>
 </html>
