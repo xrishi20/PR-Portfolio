@@ -1,0 +1,27 @@
+{
+  "name": "Portfolio-template-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parallax.js",
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^1.9.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "postcss build build.css -o tailwind.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xrishi20/Portfolio-template-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xrishi20/Portfolio-template-1/issues"
+  },
+  "homepage": "https://github.com/xrishi20/Portfolio-template-1#readme"
+}
